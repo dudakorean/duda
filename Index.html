@@ -1,234 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>대치두다국어 | 학교별 국어 내신 분석 자료</title>
+  <meta charset="UTF-8">
+  <title>학교별 페이지 목록</title>
   <style>
-    :root{
-      --primary:#1a3c70;
-      --secondary:#f39c12;
-      --text:#222;
-      --muted:#666;
-      --bg:#f7f8fa;
-      --card:#fff;
-      --shadow:0 6px 22px rgba(0,0,0,.08);
-      --radius:14px;
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,Roboto,'Helvetica Neue','Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all}
-    body{background:var(--bg);color:var(--text);line-height:1.65}
-    a{color:inherit}
-    .container{max-width:980px;margin:0 auto;padding:0 18px}
-    header{
-      background:linear-gradient(135deg,#fdfbfb 0%, #ebedee 100%);
-      padding:64px 0 42px;
-      border-bottom:1px solid #e9ecef;
+    h1 {
+      margin-bottom: 20px;
     }
-    .badge{
-      display:inline-block;
-      background:var(--primary);
-      color:#fff;
-      padding:6px 14px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:14px;
-      margin-bottom:14px;
+    ul {
+      list-style: none;
+      padding: 0;
     }
-    h1{font-size:34px;line-height:1.25;margin-bottom:12px}
-    .sub{color:var(--muted);font-size:16px;max-width:760px}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:16px;
-      margin-top:26px;
+    li {
+      margin: 8px 0;
     }
-    .card{
-      background:var(--card);
-      border:1px solid #edf0f2;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #0366d6;
     }
-    .card h2{font-size:18px;margin-bottom:10px;color:var(--primary)}
-    .card p{color:var(--muted);font-size:14px}
-    .pill{
-      display:inline-block;
-      background:#eef2f6;
-      color:var(--primary);
-      padding:5px 10px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:700;
-      margin-right:6px;
-      margin-top:8px;
-    }
-    main{padding:34px 0 60px}
-    .notice{
-      border-left:6px solid var(--secondary);
-      background:#fff7e6;
-      padding:16px 16px;
-      border-radius:10px;
-      margin:18px 0 22px;
-      color:#5b4a1b;
-      font-size:14px;
-    }
-    .list{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:12px;
-      margin-top:14px;
-    }
-    .school{
-      background:#fff;
-      border:1px solid #edf0f2;
-      border-radius:12px;
-      padding:14px 14px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .school strong{font-size:15px}
-    .hint{font-size:12px;color:var(--muted)}
-    .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{
-      display:inline-block;
-      padding:12px 16px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:800;
-      font-size:14px;
-      border:2px solid var(--primary);
-    }
-    .btn.primary{background:var(--primary);color:#fff}
-    .btn.ghost{background:#fff;color:var(--primary)}
-    footer{
-      background:#0f172a;
-      color:rgba(255,255,255,.78);
-      padding:26px 0;
-      font-size:13px;
-    }
-    .footerBox{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-    .mini{opacity:.85}
-    @media (max-width:600px){
-      h1{font-size:28px}
-      header{padding:54px 0 34px}
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <span class="badge">대치두다국어 | 학교별 내신 분석 자료</span>
-    <h1>우리 아이 학교 국어 내신,<br>“학교별”로 따로 관리합니다 📌</h1>
-    <p class="sub">
-      학교마다 시험 범위·출제 방식·감점 포인트가 다릅니다.<br>
-      두다국어는 이를 하나로 묶지 않고, <b>학교별로 분리된 분석 페이지</b>로 관리합니다.
-    </p>
+  <h1>학교별 페이지</h1>
 
-    <div class="grid">
-      <div class="card">
-        <h2>✅ 왜 ‘학교별 링크’인가요?</h2>
-        <p>
-          같은 단원이라도 학교가 다르면 강조점이 달라집니다.<br>
-          그래서 두다는 “한 장짜리 공통 자료”가 아니라,<br>
-          <b>해당 학교에 딱 맞춘 자료</b>를 따로 안내합니다.
-        </p>
-        <span class="pill">#정확한대비</span>
-        <span class="pill">#불필요한범위삭제</span>
-        <span class="pill">#감점패턴차단</span>
-      </div>
-
-      <div class="card">
-        <h2>✅ 두다국어 관리의 핵심</h2>
-        <p>
-          ‘아는 것’보다 ‘실수하지 않는 것’이 내신을 가릅니다.<br>
-          두다는 단권화 + 과제 점검 + 클리닉으로<br>
-          <b>복습-적용-피드백</b>이 끊기지 않게 설계합니다.
-        </p>
-        <span class="pill">#단권화</span>
-        <span class="pill">#개별클리닉</span>
-        <span class="pill">#과제관리</span>
-      </div>
-
-      <div class="card">
-        <h2>✅ 자료 이용 안내</h2>
-        <p>
-          본 자료는 <b>학부모 개별 안내용</b>으로 제작되었습니다.<br>
-          학교별 분석 페이지는 해당 학교 학생 학부모께만 안내됩니다.
-        </p>
-        <span class="pill">#개별안내</span>
-        <span class="pill">#학교별분리</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="container">
-
-    <div class="notice">
-      🔒 <b>안내</b> : 아래 학교 목록은 “분석 관리 범위” 안내용입니다.<br>
-      실제 분석 페이지 링크는 학교별로 개별 발송됩니다.
-    </div>
-
-    <section class="card">
-      <h2 style="margin-bottom:8px;">📚 현재 관리 중인 학교</h2>
-      <p style="color:var(--muted);font-size:14px;">
-        (원장님이 운영 중인 10개 학교를 여기에 채워 넣으면 됩니다)
-      </p>
-
-      <div class="list">
-        <div class="school"><strong>단대부고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>휘문고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>경기고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>진선여고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>선화예고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>OO고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>OO고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>OO고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>OO고</strong><span class="hint">학교별 분석</span></div>
-        <div class="school"><strong>OO고</strong><span class="hint">학교별 분석</span></div>
-      </div>
-
-      <div style="margin-top:14px;color:var(--muted);font-size:13px;">
-        * 학교 목록은 상황에 따라 변경될 수 있습니다.
-      </div>
-    </section>
-
-    <section class="card" style="margin-top:16px;">
-      <h2>☎ 상담/문의</h2>
-      <p style="color:var(--muted);font-size:14px;margin-top:6px;">
-        자료 문의/상담은 예약제로 운영됩니다. 편하게 연락 주세요 😊
-      </p>
-      <div class="btnRow">
-        <!-- 전화번호/카톡 링크는 실제 값으로 바꾸세요 -->
-        <a class="btn primary" href="tel:020000000">전화 상담</a>
-        <a class="btn ghost" href="#" onclick="alert('카카오톡 채널 링크를 연결해 주세요!')">카카오톡 문의</a>
-      </div>
-
-      <div style="margin-top:12px;font-size:13px;color:var(--muted);">
-        📍 서울특별시 강남구 도곡로77길 7, 3층/5층 (대치두다국어학원)
-      </div>
-    </section>
-
-  </div>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footerBox">
-      <div><b>대치두다국어학원</b> | 대표: 박소미</div>
-      <div class="mini">본 페이지는 “학교별 자료 안내용 허브”입니다.</div>
-      <div class="mini">&copy; 2026 Daechi Duda Korean Academy. All rights reserved.</div>
-    </div>
-  </div>
-</footer>
+  <ul>
+    <li><a href="jinseon.html">진선여고</a></li>
+    <li><a href="kyunggi.html">경기고</a></li>
+    <li><a href="eunkwang.html">은광여고</a></li>
+    <li><a href="whimoon.html">휘문고</a></li>
+    <li><a href="dandae.html">단대부고</a></li>
+    <li><a href="jungsan.html">중산고</a></li>
+    <li><a href="poongmoon.html">풍문고</a></li>
+    <li><a href="yangjae.html">양재고</a></li>
+    <li><a href="sookmyung.html">숙명여고</a></li>
+    <li><a href="sunhwa.html">선화예고</a></li>
+    <li><a href="jungdae.html">중대부고</a></li>
+  </ul>
 
 </body>
 </html>
