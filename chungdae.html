@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중대부고 1학년 국어 분석 보고서 - 대치두다국어</title>
+    <style>
+        /* 기본 설정 */
+        :root {
+            --primary-color: #FF6B81; /* 메인 핑크 */
+            --secondary-color: #FFF0F3; /* 연한 핑크 배경 */
+            --text-color: #333333;
+            --gray-text: #666666;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 모바일 뷰 컨테이너 */
+        .container {
+            max-width: 600px;
+            background-color: var(--white);
+            width: 100%;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            padding-bottom: 80px; /* 하단 버튼 여백 */
+        }
+
+        /* 헤더 */
+        header {
+            background-color: var(--primary-color);
+            padding: 40px 20px 30px;
+            color: var(--white);
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .header-sub {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .header-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* 본문 섹션 */
+        .content {
+            padding: 25px 20px;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* 카드 스타일 */
+        .card {
+            background: var(--white);
+            border: 1px solid #eeeeee;
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .card-title span {
+            margin-right: 8px;
+        }
+
+        .sub-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .highlight-box {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 0;
+            color: #d6334c;
+        }
+
+        .text-point {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #ddd;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* 로드맵 단계 스타일 */
+        .step {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 12px;
+            margin-top: 2px;
+        }
+
+        .step-content h4 {
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        /* 결론 및 초대 */
+        .conclusion {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .conclusion h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* 하단 고정 버튼 */
+        .fixed-btn-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to top, #ffffff 80%, rgba(255,255,255,0));
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 16px 0;
+            width: 100%;
+            max-width: 560px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 107, 129, 0.4);
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* 강조 텍스트 */
+        strong {
+            color: #d6334c;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-sub">대치두다국어학원 | 고1 내신 분석</div>
+            <div class="header-title">중대부고 1학년 국어,<br>어떻게 준비해야 1등급일까요?</div>
+        </header>
+
+        <div class="content">
+            <div class="intro-text">
+                안녕하세요, 학부모님 그리고 학생 여러분.<br>
+                <b>대치두다국어학원</b>입니다.<br><br>
+                중대부고 배정을 진심으로 축하드립니다. 중대부고 국어는 단순한 암기로는 해결되지 않는 까다로운 특징을 가지고 있습니다.<br><br>
+                최신 기출 경향과 운영 정보를 바탕으로 <b>가장 확실한 학습 로드맵</b>을 정리해 드립니다.
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span>🧐</span> 시험의 본질</div>
+                <div class="sub-title">'암기하기'가 아니라 '응용하기'입니다.</div>
+                <p>중대부고 시험은 단순히 "지식의 총량"을 묻지 않습니다. 수업 시간에 배운 <b>사고 절차를 시험장에서 똑같이 발휘할 수 있는지</b>를 평가합니다.</p>
+                <div class="highlight-box">
+                    "알고 있다" (X)<br>
+                    "조건에 맞춰 정확히 쓴다" (O)
+                </div>
+                <p>특히 최근 교과서 변경과 범위 확장(올림포스, 학평 등) 이슈가 있는 만큼, 학교 수업의 관점을 유지하면서 스스로 범위를 확장하는 능력이 필수적입니다.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span>📊</span> 시험 구조 및 비중</div>
+                <span class="tag">총 30문항</span> <span class="tag">객관식 24</span> <span class="tag">서술형 6</span>
+                
+                <div class="sub-title">1. 문학과 문법이 무게중심</div>
+                <ul>
+                    <li><b>문학(약 15문항):</b> 가장 큰 비중. &lt;보기&gt;가 정답의 기준이 됨.</li>
+                    <li><b>문법(약 11문항):</b> 매우 길게 출제. 단순 개념이 아닌 복합적 사고 요구.</li>
+                </ul>
+
+                <div class="sub-title">2. 서술형은 '변별의 중심축'</div>
+                <p>단순 평가가 아닙니다. 답을 알아도 <b>조건을 하나라도 놓치면 감점</b>이 누적됩니다. 시간 내에 완벽한 문장으로 서술하는 훈련이 안 되어 있으면 점수가 붕괴합니다.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span>💡</span> 출제 패턴 해부</div>
+                
+                <div class="sub-title">킬러 문항의 특징</div>
+                <div class="text-point">
+                    <b>복합 변형 적용형:</b> 여러 규칙을 연쇄 적용하거나, 전제 조건(형식/실질 형태소 등)에 따라 결과가 달라지게 설계합니다.
+                </div>
+                <div class="text-point">
+                    <b>&lt;보기&gt;의 절대성:</b> &lt;보기&gt;는 참고 자료가 아닙니다. 내 감상이 아니라, &lt;보기&gt;의 관점대로만 해석해야 정답이 보입니다.
+                </div>
+
+                <div class="sub-title">매력적인 오답 유도</div>
+                <p>선택지가 길고 교묘합니다. 단어 '한 끗' 차이로 정답과 오답이 갈리며, 학생의 독해력 자체를 시험합니다.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span>⚡</span> 고득점 결정 요인</div>
+                
+                <div class="sub-title">문법: 음운 변동은 '수학'이다</div>
+                <p>현상의 이름을 맞히는 건 의미 없습니다. 한 단어 안에서 <b>교체·첨가·축약·탈락이 연쇄적으로 일어나는 과정</b>을 역추적할 수 있어야 합니다. 또한 형태소 분석(기초)이 안 되어 있으면 풀 수 없게 출제됩니다.</p>
+
+                <div class="sub-title">문학: '기능 판별' 싸움</div>
+                <p>수사법 찾기가 아닙니다. 시어가 맥락 속에서 어떤 '기능'(정서 유발, 매개, 환기 등)을 하는지 입증해야 합니다.</p>
+
+                <div class="sub-title">시간 압박 (Time Attack)</div>
+                <p>문법과 서술형에서 시간이 많이 소요됩니다. 문학에서 시간을 줄이지 못하면 뒷부분은 풀지도 못하고 찍게 되는 구조입니다.</p>
+            </div>
+
+            <div class="card" style="background-color: #fff9fa; border: 1px solid #ffdde1;">
+                <div class="card-title"><span>🚀</span> 두다국어 고득점 로드맵</div>
+                <p style="margin-bottom: 20px;">"많이 풀기"보다 <b>"맞게 재현하기"</b>를 훈련합니다.</p>
+
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>개념 재정의</h4>
+                        <p>교과서 정의가 아닌, 학교가 요구하는 방식(조건/환경/위치)으로 개념을 다시 정리합니다.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>문법 '조건' 훈련</h4>
+                        <p>규칙 암기가 아닌, 조건에 따라 갈라지는 '알고리즘'을 머릿속에 심어 자동화합니다.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>서술형 템플릿 체화</h4>
+                        <p>"내용"보다 "형식"입니다. 감점 요인을 원천 차단하는 답변 구조(템플릿)를 익힙니다.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>문학 보기-근거-판별 속도화</h4>
+                        <p>감상이 아닌 논리적 판별 훈련으로 문제 풀이 속도를 극대화하여 시간을 확보합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conclusion">
+                <h3>중대부고 국어, 운이 아닌 '구조'로 이깁니다.</h3>
+                <p>오선화 선생님은 학교 수업을 반영하여,<br>
+                감점을 구조적으로 막아냅니다.</p>
+                <br>
+                <p style="font-size: 0.95rem; color: #666;">더 자세한 전략과 커리큘럼이 궁금하시다면,<br>2월 10일 화요일 저녁 8시 학부모 설명회에서 확인하세요. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-btn-wrapper">
+        <a href="https://tally.so/r/aQ2LoE" target="_blank" class="cta-btn">
+            📌 오선화T 중대부고 설명회 신청
+        </a>
+    </div>
+
+</body>
+</html>
