@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휘문고 1학년 국어 내신 분석 및 전략 | 대치두다국어학원</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0F172A; /* 딥 네이비 */
+            --accent-color: #2563EB; /* 비비드 블루 */
+            --point-color: #F59E0B; /* 골드/옐로우 포인트 */
+            --bg-light: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-gray: #475569;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            word-break: keep-all;
+        }
+
+        /* 공통 스타일 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .bg-gray {
+            background-color: var(--bg-light);
+        }
+
+        /* 헤더 & 히어로 섹션 */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #94A3B8;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* 분석 요약 섹션 */
+        .summary-box {
+            background: var(--white);
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: -30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .summary-title {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .summary-text {
+            font-size: 1.1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* 킬러 콘텐츠 카드 스타일 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        /* 전략 리스트 스타일 */
+        .strategy-list {
+            list-style: none;
+        }
+
+        .strategy-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .strategy-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* 강사 소개 섹션 */
+        .teacher-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .teacher-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--point-color);
+            margin-bottom: 10px;
+        }
+
+        .teacher-desc {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* CTA 버튼 */
+        .cta-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #F1F5F9;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748B;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="subtitle">대치두다국어학원 | 휘문고 오선화 선생님</div>
+            <h1>휘문고 1학년 국어,<br>암기가 아닌 '수능형 사고'가 필요합니다</h1>
+            <p>내신 1등급을 가르는 기준과<br>오선화 선생님의 독보적인 관리 전략</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="summary-box">
+            <div class="summary-title">📢 휘문고 1학년 국어 경향 분석</div>
+            <p class="summary-text">
+                휘문고 국어는 "얼마나 많이 외웠는가"가 아니라<br>
+                <span class="highlight">"조건을 얼마나 정확히 적용하는가"</span>가 점수를 결정합니다.
+            </p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <h2>📊 휘문고 시험, 무엇이 다를까요?</h2>
+            <p style="margin-top:10px; color:#475569;">"문법이 변별의 중심, 문학은 보기 적용 능력 필수"</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>문법: 등급 결정의 핵심</h3>
+                    <p>공통국어 문법 핵심 단원이 한 번에 출제됩니다. 단순 암기가 아닌, 낯선 예문에 규정을 적용하는 '판단력'을 요구합니다.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📑</div>
+                    <h3>문학: 철저한 논리 싸움</h3>
+                    <p>작품의 내용만으로는 부족합니다. &lt;보기&gt;라는 외부 관점을 기준으로 작품을 재해석하는 수능형 문항이 출제됩니다.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✍️</div>
+                    <h3>서술형: 치명적인 감점 구조</h3>
+                    <p>내용을 알아도 '용어, 순서, 형식'이 틀리면 감점됩니다. 상위권 학생들이 가장 많이 흔들리는 구간입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h2>☠️ 휘문고 국어 '3대 킬러' 요소</h2>
+            <p style="margin-bottom: 30px;">학생들이 "공부했는데 점수가 안 나와요"라고 말하는 이유입니다.</p>
+
+            <div style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid var(--accent-color);">
+                <h3>1. &lt;보기&gt;는 참고가 아닌 '정답 프레임'</h3>
+                <p>내가 배운 지식보다 시험지에 나온 &lt;보기&gt;의 관점이 우선입니다. 통념으로 풀면 반드시 오답이 나옵니다.</p>
+            </div>
+            <div style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid var(--accent-color);">
+                <h3>2. 인과관계 비틀기 (장문형 선지)</h3>
+                <p>3~4줄에 달하는 긴 선지에서 앞부분은 맞고 뒷부분의 '연결 고리'만 살짝 비트는 함정이 많습니다. 감으로 읽으면 무조건 틀립니다.</p>
+            </div>
+            <div style="background: white; padding: 25px; border-radius: 10px; border-left: 5px solid var(--accent-color);">
+                <h3>3. 서술형의 엄격한 형식</h3>
+                <p>음운 변동의 순서, 이중피동을 찾고 수정까지 해야 하는 까다로움 등 '조건'을 하나라도 놓치면 부분 점수 없이 감점됩니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>🏆 1등급을 위한 필승 로드맵</h2>
+            <br>
+            <h3>① 어휘 부교재(마더텅)는 '규정집'이다</h3>
+            <ul class="strategy-list">
+                <li>단순 뜻 암기가 아닌, 맞춤법/사이시옷 등의 <strong>원리와 예외</strong>를 정리해야 합니다.</li>
+                <li>시험 직전 벼락치기가 불가능하므로, 미리 '규정-예시 매칭표'를 만들어둬야 합니다.</li>
+            </ul>
+            <br>
+            <h3>② 서술형 감점 방지 공식</h3>
+            <ul class="strategy-list">
+                <li><strong>용어 구체화:</strong> '교체' (X) → '된소리되기' (O)</li>
+                <li><strong>체크리스트 활용:</strong> 인칭, 시점, 종결어미 등 변환 요소를 빠짐없이 체크하는 훈련이 필요합니다.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="teacher-section">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">휘문고 국어, '관리'가 실력을 만듭니다</h2>
+            <p class="teacher-name">휘문고 1학년 담당 | 오선화 선생님</p>
+            <div class="teacher-desc">
+                "휘문고 국어는 혼자 많이 푼다고 해결되지 않습니다.<br>
+                실수의 원인을 사고 과정까지 추적해 교정하는<br>
+                독보적인 클리닉 시스템이 필요합니다."
+            </div>
+            
+            <div style="text-align: left; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: var(--point-color); margin-bottom: 15px;">📌 두다국어 오선화T의 관리 포인트</h3>
+                <p>✅ <strong>서술형 형식 교정:</strong> 답안 작성의 디테일을 1:1로 첨삭 지도</p>
+                <p>✅ <strong>누적 테스트:</strong> 어휘/맞춤법 구멍을 매주 메우는 빈틈없는 관리</p>
+                <p>✅ <strong>사고 과정 피드백:</strong> "왜 틀렸는지"를 분석해 개인별 오답 습관 교정</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; background-color: #EEF2FF;">
+        <div class="container">
+            <h2 style="color: var(--primary-color);">대치두다국어학원 설명회 초대</h2>
+            <p style="margin-top: 15px; font-size: 1.1rem; color: #475569;">
+                휘문고 국어 1등급을 위한 구체적인 전략과<br>
+                오선화 선생님의 커리큘럼을 상세히 공개합니다.
+            </p>
+            
+            <div class="cta-container">
+                <a href="https://tally.so/r/aQ2LoE" target="_blank" class="cta-button">
+                    설명회 신청하기 👉
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #64748B;">
+                    2월 10일 화요일 저녁 8시
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>대치두다국어학원</h3>
+            <p>서울 강남구 도곡로77길 7 (대치동)</p>
+            <p>상담 문의: 02-558-6863, 010-3845-6863</p>
+            <p style="margin-top: 20px;">Copyright © DAECHI DUDA ACADEMY. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
