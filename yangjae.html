@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>양재고 1학년 국어 내신 시험 경향 분석 | 대치두다국어학원</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f9fafb;
+      --brand:#111827;
+      --accent:#2563eb;
+      --accent2:#0ea5e9;
+      --warn:#ef4444;
+      --good:#10b981;
+      --shadow: 0 10px 25px rgba(0,0,0,.06);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo","Malgun Gothic", "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background:linear-gradient(180deg, #ffffff 0%, #fbfbfd 60%, #ffffff 100%);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .container{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 16px 56px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 2px 0;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 13px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.03);
+      white-space:nowrap;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .brand strong{
+      letter-spacing:-.02em;
+      font-size:14px;
+      color:var(--brand);
+    }
+    .brand span{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .hero{
+      margin-top:14px;
+      background: radial-gradient(1200px 400px at 20% -10%, rgba(37,99,235,.12), transparent 55%),
+                  radial-gradient(1000px 360px at 90% 0%, rgba(14,165,233,.12), transparent 55%),
+                  #ffffff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height:1.25;
+      letter-spacing:-.03em;
+    }
+    .hero p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .hero .meta{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.85);
+      color:#111827;
+      font-size:13px;
+    }
+    .grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 860px){
+      .grid{ grid-template-columns: 1.05fr .95fr; gap:14px;}
+      .hero{ padding: 26px 22px;}
+      .hero h1{ font-size: 26px;}
+      .hero p{ font-size: 15px;}
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.04);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size: 16px;
+      letter-spacing:-.02em;
+    }
+    .card h3{
+      margin: 14px 0 8px;
+      font-size: 14px;
+      letter-spacing:-.02em;
+    }
+    .small{
+      margin:0;
+      color:var(--muted);
+      font-size: 13px;
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .kpi .box{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      background: var(--soft);
+    }
+    .kpi .box strong{
+      display:block;
+      font-size: 14px;
+      letter-spacing:-.02em;
+    }
+    .kpi .box span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size: 12px;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 12px;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background:#fff;
+    }
+    .dot{
+      width:28px;height:28px;
+      display:grid;place-items:center;
+      border-radius: 10px;
+      background: rgba(37,99,235,.08);
+      border: 1px solid rgba(37,99,235,.18);
+      flex:0 0 28px;
+      font-size: 14px;
+    }
+    .li b{
+      display:block;
+      font-size: 13.5px;
+      letter-spacing:-.02em;
+      margin-bottom: 3px;
+    }
+    .li p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .callout{
+      margin-top: 12px;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border: 1px dashed rgba(239,68,68,.35);
+      background: rgba(239,68,68,.05);
+    }
+    .callout strong{ display:block; margin-bottom:6px;}
+    .callout p{ margin:0; color:var(--muted); font-size:13px;}
+
+    .steps{
+      margin-top: 10px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+    @media(min-width:860px){
+      .steps{ grid-template-columns: 1fr 1fr; }
+    }
+    .step{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+    }
+    .step .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+      background:#fff;
+    }
+    .step h4{
+      margin: 10px 0 6px;
+      font-size: 14px;
+      letter-spacing:-.02em;
+    }
+    .step ul{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .step li{ margin: 5px 0; }
+
+    .table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background:#fff;
+    }
+    .table th, .table td{
+      padding: 10px 10px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size: 13px;
+    }
+    .table th{
+      text-align:left;
+      background: #f8fafc;
+      color:#0f172a;
+      font-weight: 700;
+      letter-spacing:-.01em;
+    }
+    .table tr:last-child td{border-bottom:0}
+    .note{
+      margin-top:10px;
+      padding: 12px 12px;
+      border:1px solid rgba(16,185,129,.22);
+      background: rgba(16,185,129,.06);
+      border-radius: 14px;
+      color: #065f46;
+      font-size: 13px;
+    }
+
+    .footer{
+      margin-top: 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(37,99,235,.25);
+      background: linear-gradient(180deg, rgba(37,99,235,.95), rgba(37,99,235,.85));
+      color:#fff;
+      font-weight: 800;
+      letter-spacing:-.02em;
+      text-decoration:none;
+      box-shadow: 0 12px 22px rgba(37,99,235,.18);
+    }
+    .btn:active{ transform: translateY(1px); }
+    .subbtn{
+      width:100%;
+      text-align:center;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .disclaimer{
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 10px 2px 0;
+    }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 14px 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="topbar">
+      <div class="brand">
+        <strong>대치두다국어학원</strong>
+        <span>양재고 1학년 국어 내신 시험 경향 분석</span>
+      </div>
+      <div class="badge">📌 25-1 중간고사 출제 경향 기반</div>
+    </div>
+
+    <section class="hero" aria-label="헤더">
+      <h1>양재고 국어 내신, <br>“서술형이 없어도 더 어렵게” 출제됩니다.</h1>
+      <p>
+        양재고는 <b>100% 객관식</b>으로 출제되지만, 변별력을 확보하기 위해
+        <b>문항 난도</b>와 <b>선지 함정</b>이 강화되는 흐름입니다.  
+        1등급을 위해서는 “아는지”가 아니라 “<b>완벽하게 검증하는지</b>”가 핵심입니다.
+      </p>
+
+      <div class="meta">
+        <div class="pill">🧩 핵심 킬러: <b>‘모두 고르시오’(다지선다)</b></div>
+        <div class="pill">📚 수능형: <b>외부 지문/낯선 작품</b> 결합</div>
+        <div class="pill">🔎 디테일: <b>교과서·프린트·지도서</b> 기반 선지</div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <!-- LEFT -->
+      <section class="card" aria-label="시험 한눈에">
+        <h2>🧭 시험 경향 한눈에 보기</h2>
+        <p class="small">
+          “서술형이 사라졌는데 쉬워진 게 아니라, <b>객관식이 더 까다로워진</b> 형태”로 변별력을 확보합니다.
+        </p>
+
+        <div class="kpi">
+          <div class="box">
+            <strong>출제 형태</strong>
+            <span>100% 객관식 (서술형 폐지 흐름)</span>
+          </div>
+          <div class="box">
+            <strong>변별 포인트</strong>
+            <span>다지선다 + 외부 지문 + 선지 디테일</span>
+          </div>
+          <div class="box">
+            <strong>체감 난도</strong>
+            <span>“한 문제 틀리면 등급 흔들림”</span>
+          </div>
+          <div class="box">
+            <strong>학습 키워드</strong>
+            <span>검증 / 근거 / 조건 / 함정 회피</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>⚠️ 양재고식 함정은 ‘모호함’에서 시작됩니다.</strong>
+          <p>
+            “대충 이해”한 상태로 시험장에 가면, 헷갈리는 선지 하나가 <b>연쇄 오답</b>으로 이어질 수 있습니다.
+            <b>모호함 제거(디테일 암기 + 근거 훈련)</b>가 1등급의 출발점입니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="card" aria-label="킬러 유형">
+        <h2>🔥 킬러 문항: ‘모두 고르시오’</h2>
+        <p class="small">
+          양재고에서 등급을 가르는 핵심 유형입니다.
+          정답 개수가 고정되지 않아 <b>심리적으로 흔들리는 순간</b>이 가장 위험합니다.
+        </p>
+
+        <ul class="list">
+          <li class="li">
+            <div class="dot">✅</div>
+            <div>
+              <b>접근법: 5지선다 = 5개의 O/X</b>
+              <p>“정답 찾기”가 아니라 “오답 제거”로 풀어야 합니다.</p>
+            </div>
+          </li>
+          <li class="li">
+            <div class="dot">🧷</div>
+            <div>
+              <b>선지 뜯어보기: 틀린 단어 1개 찾기</b>
+              <p>문장 전체가 아니라, 단어 하나가 바뀌어 오답이 되는 경우가 많습니다.</p>
+            </div>
+          </li>
+          <li class="li">
+            <div class="dot">🧠</div>
+            <div>
+              <b>개수 함정 금지</b>
+              <p>“보통 2~3개”라는 기대를 이용해 멘탈을 흔듭니다. 개수는 끝까지 잊으세요.</p>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <section class="card" aria-label="영역별 출제 특징">
+      <h2>📌 영역별 출제 특징</h2>
+      <p class="small">교과서 기반이지만, “수능형 사고 + 내신 디테일”이 결합되는 구조입니다.</p>
+
+      <table class="table" role="table" aria-label="영역별 특징 표">
+        <thead>
+          <tr>
+            <th style="width:26%">영역</th>
+            <th>주요 특징</th>
+            <th style="width:32%">공부 포인트</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>독서(비문학)</b> 🧾</td>
+            <td>고난도 지문이 출제되며, <b>사례 적용·추론</b> 문항이 반복됩니다.</td>
+            <td>문단 구조(주장-근거-예시) 표시 + 근거 회수 훈련</td>
+          </tr>
+          <tr>
+            <td><b>문학</b> ✨</td>
+            <td>교과서 작품 학습 후, <b>외부 작품/보기</b>와 비교·연계되는 문제가 출제됩니다.</td>
+            <td>주제·정서·표현법 “비교표”로 정리(공통점/차이점)</td>
+          </tr>
+          <tr>
+            <td><b>문법</b> 🧩</td>
+            <td>범위 개념만이 아니라 <b>기초 원리(형태소·음운 체계)</b>까지 요구하는 함정형 문항이 나옵니다.</td>
+            <td>개념 정의를 문장으로 암기 + 낯선 예문 분석(원리 적용)</td>
+          </tr>
+          <tr>
+            <td><b>어휘</b> 📝</td>
+            <td>문맥상 의미/유의어 교체 등 <b>수능형 어휘</b>가 매 시험 꾸준히 등장합니다.</td>
+            <td>지문 속 핵심 어휘를 ‘문장’으로 익히기(맥락 포함)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        ✅ 포인트: “수능형이라서 대충 읽어도 된다”가 아니라, <b>수능형이라서 더 정확한 근거가 필요</b>합니다.
+      </div>
+    </section>
+
+    <section class="card" aria-label="1등급 전략 5가지">
+      <h2>🎯 1등급 확보를 위한 핵심 전략 5</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="tag">1) 킬러 대응</span>
+          <h4>‘모두 고르시오’는 O/X로 검증</h4>
+          <ul>
+            <li>선지 1개 = O/X 1문제</li>
+            <li>맞으면 근거, 틀리면 “틀린 단어” 표시</li>
+            <li>개수 예상 금지</li>
+          </ul>
+        </div>
+        <div class="step">
+          <span class="tag">2) 디테일 암기</span>
+          <h4>교과서·프린트·지도서의 ‘작은 글씨’까지</h4>
+          <ul>
+            <li>용어 정의/핵심 문장을 문장째 암기</li>
+            <li>빈칸 채우기 방식으로 모호함 제거</li>
+          </ul>
+        </div>
+        <div class="step">
+          <span class="tag">3) 외부 지문</span>
+          <h4>낯선 작품/지문은 “구조 분석”으로 뚫기</h4>
+          <ul>
+            <li>정서·태도·전개·표현 4요소 체크</li>
+            <li>교과서 작품과 비교표 작성</li>
+          </ul>
+        </div>
+        <div class="step">
+          <span class="tag">4) 문법 심화</span>
+          <h4>범위 개념 + 기초 원리까지 연결</h4>
+          <ul>
+            <li>형태소/음운 체계 같은 기반 개념 정리</li>
+            <li>낯선 예문에도 적용 가능한 ‘원리’ 학습</li>
+          </ul>
+        </div>
+        <div class="step" style="grid-column: 1 / -1;">
+          <span class="tag">5) 수능형 루틴</span>
+          <h4>독해력·어휘력은 “단기간 벼락치기”가 어렵습니다</h4>
+          <ul>
+            <li>고난도 독서 지문을 짧게라도 꾸준히</li>
+            <li>어휘는 ‘뜻’만 외우지 말고 ‘문맥’으로 익히기</li>
+            <li>오답은 “왜 틀렸는지”까지 기록(선지 뜯어보기)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-label="실전 루틴">
+      <h2>⏱️ 시험 직전 실전 루틴 (추천)</h2>
+      <ul class="list">
+        <li class="li">
+          <div class="dot">1</div>
+          <div>
+            <b>교과서/프린트/지도서 문장 정리</b>
+            <p>헷갈리는 표현을 ‘문장’으로 확정해 두면 선지에서 흔들리지 않습니다.</p>
+          </div>
+        </li>
+        <li class="li">
+          <div class="dot">2</div>
+          <div>
+            <b>‘모두 고르시오’ 전용 훈련: 선지 O/X 판정</b>
+            <p>정답만 맞히는 연습이 아니라, <b>근거를 찾는 연습</b>이 핵심입니다.</p>
+          </div>
+        </li>
+        <li class="li">
+          <div class="dot">3</div>
+          <div>
+            <b>외부 지문 1~2개로 비교/적용 훈련</b>
+            <p>낯선 지문이 나왔을 때 “구조 분석”으로 바로 잡는 힘을 길러야 합니다.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+      <p class="small">
+        📍 두다국어는 “정답을 알려주는 수업”이 아니라,  
+        <b>시험장에서 틀리지 않는 방식(검증 루틴)</b>을 설계해 드립니다.
+      </p>
+    </section>
+
+    <section class="card" aria-label="마무리 및 버튼">
+      <h2>📽️ 양재고 국어 내신 설명회 영상</h2>
+      <p class="small">
+        양재고 내신에서 <b>실제로 등급이 갈리는 포인트</b>와,
+        ‘모두 고르시오’ 대비를 위한 <b>구체적인 훈련 방식</b>을 영상으로 안내드립니다.
+      </p>
+
+      <div class="footer">
+        <a class="btn" href="https://blog.naver.com/du-da/224183006323" target="_blank" rel="noopener">
+          설명회 영상 신청하기 ▶
+        </a>
+        <div class="subbtn">버튼 클릭 시 네이버 블로그 신청 페이지로 이동합니다.</div>
+        <div class="disclaimer">
+          ※ 본 자료는 학교의 평가 취지를 존중하며, 공개된 시험지·수업 자료를 기반으로 학습 방향을 안내하기 위한 목적의 분석입니다.
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
