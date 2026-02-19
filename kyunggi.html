@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>경기고 예비고1 국어 내신 안내 | 대치두다국어학원</title>
+  <style>
+    :root{
+      /* Light + premium */
+      --bg:#f7f8fb;
+      --surface:#ffffff;
+      --surface2:#fbfbff;
+      --text:#111827;       /* slate-900 */
+      --sub:#374151;        /* slate-700 */
+      --muted:#6b7280;      /* slate-500 */
+      --line:rgba(17,24,39,.10);
+
+      --accent:#2563eb;     /* blue-600 */
+      --accent2:#7c3aed;    /* violet-600 */
+      --mint:#10b981;       /* emerald-500 */
+      --amber:#f59e0b;      /* amber-500 */
+
+      --shadow: 0 14px 40px rgba(17,24,39,.08);
+      --shadow2: 0 10px 28px rgba(17,24,39,.10);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 980px;
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(800px 420px at 10% -10%, rgba(124,58,237,.10), transparent 55%),
+        radial-gradient(800px 420px at 90% -10%, rgba(37,99,235,.10), transparent 55%),
+        radial-gradient(900px 700px at 50% 120%, rgba(16,185,129,.08), transparent 55%),
+        var(--bg);
+      line-height:1.7;
+    }
+
+    a{color:inherit; text-decoration:none;}
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:16px 14px 72px;
+    }
+
+    /* Mobile-first top */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:8px 2px 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800;
+      letter-spacing:-.2px;
+    }
+    .brand .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 5px rgba(37,99,235,.10);
+    }
+    .pill{
+      font-size:12px;
+      padding:6px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(6px);
+      white-space:nowrap;
+    }
+
+    /* Hero */
+    .hero{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));
+      border-radius: calc(var(--radius) + 6px);
+      padding:18px 16px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(540px 220px at 18% 0%, rgba(37,99,235,.10), transparent 60%),
+        radial-gradient(540px 220px at 82% 0%, rgba(124,58,237,.08), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-inner{position:relative;}
+    h1{
+      margin:0 0 10px;
+      font-size:22px; /* mobile first */
+      line-height:1.25;
+      letter-spacing:-.4px;
+    }
+    .lead{
+      margin:0;
+      color:var(--sub);
+      font-size:14px;
+    }
+
+    /* Stacked summary cards (mobile-friendly) */
+    .stack{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+    .mini{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:12px 12px 10px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 8px 22px rgba(17,24,39,.05);
+    }
+    .mini h3{
+      margin:0 0 8px;
+      font-size:14px;
+      display:flex; align-items:center; gap:8px;
+      letter-spacing:-.2px;
+    }
+    .mini p{
+      margin:0;
+      font-size:13px;
+      color:var(--sub);
+    }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:8px;
+      margin-top:10px;
+    }
+    .kpi .box{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:10px 12px;
+      background: rgba(249,250,251,.95);
+      display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+    }
+    .kpi .num{font-size:15px; font-weight:900; letter-spacing:-.2px;}
+    .kpi .lbl{font-size:12px; color:var(--muted);}
+
+    /* Main cards */
+    main{margin-top:14px; display:grid; grid-template-columns:1fr; gap:12px;}
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow2);
+      padding:16px 14px 14px;
+    }
+    .card h2{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:-.2px;
+      display:flex; align-items:center; gap:10px;
+      flex-wrap:wrap;
+    }
+    .tag{
+      font-size:11px;
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background: rgba(249,250,251,.95);
+    }
+    .subtxt{
+      margin:0 0 12px;
+      color:var(--sub);
+      font-size:13.5px;
+    }
+
+    /* Callouts */
+    .callout{
+      margin-top:10px;
+      border-radius: 14px;
+      padding:10px 12px;
+      font-size:13.5px;
+      color:var(--sub);
+      background: rgba(37,99,235,.06);
+      border:1px solid rgba(37,99,235,.14);
+    }
+    .callout.good{
+      background: rgba(16,185,129,.07);
+      border-color: rgba(16,185,129,.18);
+    }
+    .callout.warn{
+      background: rgba(245,158,11,.10);
+      border-color: rgba(245,158,11,.22);
+    }
+
+    /* List */
+    ul{margin:0; padding-left:18px; color:var(--sub); font-size:13.5px;}
+    li{margin:6px 0;}
+
+    /* Table -> mobile friendly (stacked rows) */
+    .table{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      overflow:hidden;
+      background: rgba(249,250,251,.85);
+    }
+    .trow{
+      padding:10px 12px;
+      border-bottom:1px solid rgba(17,24,39,.08);
+    }
+    .trow:last-child{border-bottom:none;}
+    .tkey{
+      font-weight:900;
+      font-size:13px;
+      margin-bottom:4px;
+      color:var(--text);
+      display:flex; align-items:center; gap:8px;
+    }
+    .tval{
+      color:var(--sub);
+      font-size:13.5px;
+    }
+    .tkey span{
+      font-size:12px;
+      padding:2px 8px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background: rgba(255,255,255,.9);
+      font-weight:700;
+    }
+
+    /* Frames */
+    .frames{display:grid; grid-template-columns:1fr; gap:10px; margin-top:8px;}
+    .frame{
+      border:1px dashed rgba(17,24,39,.18);
+      background: rgba(255,255,255,.95);
+      border-radius: 14px;
+      padding:12px;
+    }
+    .frame .ttl{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      margin-bottom:6px;
+    }
+    .frame .ttl b{font-size:13px; letter-spacing:-.2px;}
+    .frame code{
+      display:block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:12.5px;
+      color: rgba(17,24,39,.92);
+      white-space: pre-wrap;
+      line-height:1.55;
+      background: rgba(249,250,251,.85);
+      border:1px solid rgba(17,24,39,.08);
+      border-radius: 12px;
+      padding:10px;
+    }
+    .hint{font-size:12px; color:var(--muted); margin-top:8px;}
+
+    /* TOP5 */
+    .top5{display:grid; grid-template-columns:1fr; gap:8px; margin-top:10px;}
+    .row{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(249,250,251,.85);
+    }
+    .badge{
+      min-width:28px; height:28px;
+      border-radius:999px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      color:#ffffff;
+      background: linear-gradient(135deg, var(--amber), #fbbf24);
+      box-shadow: 0 10px 22px rgba(245,158,11,.18);
+    }
+    .row .txt{font-size:13.5px; color:var(--sub);}
+    .row .txt b{display:block; margin-bottom:2px; color:var(--text);}
+
+    /* Steps */
+    .steps{display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px;}
+    .step{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:12px;
+      background: rgba(249,250,251,.85);
+    }
+    .step .n{
+      font-weight:900;
+      font-size:13px;
+      display:flex; align-items:center; gap:8px;
+      margin-bottom:6px;
+      color:var(--text);
+    }
+    .step .n span{
+      width:22px; height:22px;
+      border-radius:999px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(37,99,235,.10);
+      border:1px solid rgba(37,99,235,.18);
+      color: var(--accent);
+      font-weight:900;
+    }
+    .step p{margin:0; color:var(--sub); font-size:13.5px;}
+
+    /* CTA (sticky-like feel on mobile) */
+    .cta{
+      margin-top:14px;
+      border:1px solid rgba(37,99,235,.18);
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(180deg, rgba(37,99,235,.06), rgba(124,58,237,.05));
+      padding:16px 14px;
+      box-shadow: var(--shadow);
+    }
+    .cta h3{
+      margin:0 0 6px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    .cta p{
+      margin:0 0 12px;
+      font-size:13.5px;
+      color:var(--sub);
+    }
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      gap:10px;
+      padding:13px 16px;
+      border-radius: 14px;
+      border:1px solid rgba(37,99,235,.22);
+      background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(124,58,237,.90));
+      color:#ffffff;
+      font-weight:900;
+      letter-spacing:-.2px;
+      box-shadow: 0 12px 26px rgba(37,99,235,.20);
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); filter: brightness(1.02);}
+    .btn:active{transform: translateY(0px); filter: brightness(.98);}
+
+    footer{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+
+    /* Desktop enhancement */
+    @media (min-width: 860px){
+      .wrap{padding:22px 18px 86px;}
+      h1{font-size:28px;}
+      .stack{grid-template-columns: 1.2fr .8fr;}
+      .kpi{grid-template-columns: repeat(3, 1fr);}
+      .kpi .box{flex-direction:column; align-items:flex-start;}
+      main{gap:14px;}
+      .card{padding:18px 18px 16px;}
+      .steps{grid-template-columns: repeat(3, 1fr);}
+      .btn{max-width: 360px; margin-left:auto;}
+      .cta{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+      .cta .copy{max-width: 62ch;}
+      .cta p{margin-bottom:0;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>대치두다국어학원</span>
+      </div>
+      <div class="pill">경기고 예비고1 · 국어 내신</div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>경기고 예비고1 국어 내신<br/>“1등급 달성”을 위한 로드맵 📌</h1>
+        <p class="lead">
+          두다는 <b>학교 출제 경향</b>을 기준으로, 실제 점수를 만드는 <b>실전형 전략</b>을 안내드립니다.
+        </p>
+
+        <!-- Mobile-friendly stacked cards -->
+        <div class="stack">
+          <div class="mini">
+            <h3>🧭 한 줄 결론</h3>
+            <p>
+              “열심히”만으로는 부족합니다.<br/>
+              <b>학교 필기</b> + <b>유인물</b> + <b>서답형 조건</b>이 등급을 가릅니다.
+            </p>
+
+            <div class="kpi" aria-label="시험 구성 요약">
+              <div class="box">
+                <div class="num">총 26문항</div>
+                <div class="lbl">겉보기 기준</div>
+              </div>
+              <div class="box">
+                <div class="num">객관식 22</div>
+                <div class="lbl">정보량 과부하 설계</div>
+              </div>
+              <div class="box">
+                <div class="num">서답형 4</div>
+                <div class="lbl">체감은 30+ (소문항/조건)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mini">
+            <h3>⏱️ 시간 부족이 “구조”입니다</h3>
+            <p>
+              서답형은 소문항으로 쪼개지고, 각 소문항마다 독립 조건이 붙습니다.
+              실제 시험장에서는 풀이 시간의 <b>40% 이상</b>이 서답형에 쓰이도록 설계됩니다.
+            </p>
+            <div class="callout warn">
+              ✅ 따라서 “아는 것”보다 <b>조건을 지키며 빠르게 쓰는 훈련</b>이 필수입니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- 1 -->
+      <section class="card">
+        <h2>1) 시험 범위의 핵심 구조 🗂️ <span class="tag">교과서 + 유인물 결합</span></h2>
+        <p class="subtxt">
+          경기고는 단순 교과서형이 아닙니다. 학교 자체 유인물(프린트)과 교과서 내용이
+          <b>유기적으로 결합</b>되어 출제됩니다.
+        </p>
+
+        <!-- Mobile stacked "table" -->
+        <div class="table" role="table" aria-label="영역별 범위와 전략">
+          <div class="trow">
+            <div class="tkey">문학 <span>필기 반영</span></div>
+            <div class="tval">
+              현대시 + 현대소설<br/>
+              <b>학교 필기 내용이 선지화</b>되는 ‘교과서 충실도’가 변별력입니다.
+            </div>
+          </div>
+          <div class="trow">
+            <div class="tkey">문법 <span>음운 변동</span></div>
+            <div class="tval">
+              자음군 단순화·된소리되기·동화 등<br/>
+              단순 암기 차단 — <b>적용 ‘단계’와 ‘논리’</b>를 묻는 고난도 설계입니다.
+            </div>
+          </div>
+          <div class="trow">
+            <div class="tkey">독서 <span>유인물 중심</span></div>
+            <div class="tval">
+              유인물 지문 중심<br/>
+              <b>근거에 기반한 문제 풀이</b>와 <b>어휘력, 독해력</b>을 모두 필요로 합니다.
+            </div>
+          </div>
+          <div class="trow">
+            <div class="tkey">화작/매체 <span>원리 적용</span></div>
+            <div class="tval">
+              교과서 ‘대화의 원리’ 및 매체 단원 포함<br/>
+              정답은 ‘상식’이 아니라 <b>규칙 적용</b>으로 결정됩니다.
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          🎯 정리: 경기고 내신은 <b>시간 부족</b> · <b>고난도 문법</b> · <b>학교 필기 반영</b>의
+          3대 키워드로 요약됩니다.
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="card">
+        <h2>2) 영역별 변별 포인트 🔍 <span class="tag">‘느낌’이 아닌 ‘기능’</span></h2>
+
+        <div class="callout good">
+          ✅ 경기고는 “그럴듯한 말”을 걸러내는 시험입니다. <b>출제 의도</b>와 <b>근거</b>를 먼저 잡아야 합니다.
+        </div>
+
+        <div style="margin-top:10px;">
+          <h3 style="margin:0 0 6px; font-size:14px; letter-spacing:-.2px;">📖 문학</h3>
+          <ul>
+            <li>시어를 <b>환대/성찰/억압</b> 같은 키워드로 정밀하게 해석해야 합니다.</li>
+            <li>예: ‘환대’를 ‘부담/회피’로 오독 유도, “찾는 과정”을 “목표 달성”으로 단순화.</li>
+            <li>‘바람/길/돌담’은 배경이 아니라 <b>기능(억압·성찰의 매개)</b>으로 읽어야 합니다.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:10px;">
+          <h3 style="margin:0 0 6px; font-size:14px; letter-spacing:-.2px;">🧩 문법</h3>
+          <ul>
+            <li>정보 처리량이 많습니다: 1문제에서 확인해야 할 단어가 대량으로 제시됩니다. 시간 소요가 큽니다.</li>
+            <li>킬러: <b>자음군 단순화(탈락) → 된소리되기(교체)</b>처럼 <b>적용 순서</b>를 단계별로 설명해야 합니다.</li>
+            <li><b>형식 형태소 / 실질 형태소</b> 구분은 서술형의 핵심 감점 포인트입니다.</li>
+          </ul>
+          <div class="callout warn">⚠️ 문법은 “용어·순서·발음 확정” 중 하나만 흔들려도 점수가 크게 흔들립니다.</div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <h3 style="margin:0 0 6px; font-size:14px; letter-spacing:-.2px;">🧠 독서</h3>
+          <ul>
+            <li>배경지식(상식)으로 판단하면 오답 선지에 끌려갑니다.</li>
+            <li>주장-근거-반박-재반박을 <b>지문 근거로만</b> 매칭해야 합니다.</li>
+            <li>요지를 <b>명언/격언</b>으로 변환시켜 고르는 문제는 경기고의 단골입니다.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="card">
+        <h2>3) 서답형 감점 방지 프레임 🧷 <span class="tag">그대로 쓰면 되는 문장 틀</span></h2>
+        <p class="subtxt">
+          경기고 서술형은 “내용”보다 <b>조건·형식 준수</b>가 더 강하게 채점됩니다.
+          아래 문장 틀을 그대로 익혀두면 감점을 크게 줄일 수 있습니다.
+        </p>
+
+        <div class="frames">
+          <div class="frame">
+            <div class="ttl">
+              <b>① 맥락 서술형(Frame)</b>
+              <span class="pill">3종 세트</span>
+            </div>
+            <code>(라)의 글쓴이는 [사회·문화적 맥락, 작가 맥락, 문학사적 맥락]을 고려하여 시를 감상하고 있다.</code>
+            <div class="hint">※ ‘3개 요소’ 누락 시 감점 위험</div>
+          </div>
+
+          <div class="frame">
+            <div class="ttl">
+              <b>② 의미 서술형(Frame)</b>
+              <span class="pill">수식 관계</span>
+            </div>
+            <code>㉠(또는 ㉧)은 [수식어 + 핵심 명사]를 의미하며, 이는 [기능]을 수행한다.</code>
+            <div class="hint">※ 키워드 나열 금지 → “수식 구조”로 묶기</div>
+          </div>
+
+          <div class="frame">
+            <div class="ttl">
+              <b>③ 문법 이유(Frame)</b>
+              <span class="pill">대조(반면)</span>
+            </div>
+            <code>㉠에서 ~ 반면, ㉡에서 ~ 때문이다.
+(예) ㉠은 형식 형태소, ㉡은 실질 형태소이기 때문에 음운 변동이 다르게 적용된다.</code>
+            <div class="hint">※ “반면” 구조로 쓰면 안정적</div>
+          </div>
+        </div>
+
+        <div class="callout good">
+          ✅ 서술형은 쓰기 전 <b>조건 체크박스</b> → 작성 후 <b>조건 재검토</b> 루틴이 점수를 지킵니다.
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="card">
+        <h2>4) 1등급을 가로막는 실수 TOP 5 🚫 <span class="tag">매년 반복</span></h2>
+
+        <div class="top5">
+          <div class="row">
+            <div class="badge">1</div>
+            <div class="txt"><b>문학 정서 파악</b> 중심 정서에서 벗어난 것 파악하기. 킬러 선지에 단골 출제 됩니다.</div>
+          </div>
+          <div class="row">
+            <div class="badge">2</div>
+            <div class="txt"><b>시어, 시구 기능 해석 실패</b> 교과서 필기 등 내용 학습뿐만 아니라 <b>학습활동</b>까지 꼼꼼하게 학습할 수 있어야 합니다.</div>
+          </div>
+          <div class="row">
+            <div class="badge">3</div>
+            <div class="txt"><b>서술형 조건 누락</b> 소문항별 조건(수식 관계, 문장 틀 등)을 한 개만 놓쳐도 감점 폭이 큽니다.</div>
+          </div>
+          <div class="row">
+            <div class="badge">4</div>
+            <div class="txt"><b>문법 적용 순서 붕괴</b> (예) ‘맑고’처럼 단계 논리(예외-교체-탈락)를 빠뜨리면 서술형이 무너집니다.</div>
+          </div>
+          <div class="row">
+            <div class="badge">5</div>
+            <div class="txt"><b>독서 자의적 추론</b> 배경지식이 아니라 지문 근거로만 판단해야 오답 선지를 피할 수 있습니다.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="card">
+        <h2>5) 고득점 3단계 학습 솔루션 ✅ <span class="tag">시간·문법·필기 대응</span></h2>
+        <p class="subtxt">
+          경기고의 “시간 압박”과 “고난도 문법”을 정면으로 잡기 위해, 다음 3단계로 관리합니다.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="n"><span>1</span> 시간 관리 & 실전 훈련</div>
+            <p>
+              <b>누적 테스트</b>로 망각을 차단하고 복습을 강화합니다.<br/>
+              <b>경기고 출제 경향 완벽 반형</b>동형 모의고사(50분 제한 + OMR 포함)로 실전 연습
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="n"><span>2</span> 꼼꼼하고 친절한 클리닉</div>
+            <p>
+              주중 클리닉으로 오개념, 빈출 함정, 서술형 첨삭 진행<br/>
+              기출 문제 엄선<b>경기고 스타일</b> 문제로 연습합니다.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="n"><span>3</span> 필기 전수 분석 & 자료 완성도</div>
+            <p>
+              교과서/프린트 필기를 전수 반영하여 경기고에 맞는 수업 진행<br/>
+              학교 수업 듣도록 체크, 직접 필기-선생님께 제출, 검사합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout">
+          📌 두다의 기준: “많이”가 아니라 <b>경기고 방식으로</b> 공부해야 점수가 올라갑니다.
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" aria-label="설명회 영상 신청">
+        <div class="copy">
+          <h3>설명회 영상으로 더 자세히 확인하기 🎥</h3>
+          <p>
+            경기고 국어는 ‘정보량’과 ‘조건’이 승부를 가릅니다.<br/>
+            영상에서 <b>시험 대비 로드맵</b>을 더 구체적으로 안내드립니다.
+          </p>
+        </div>
+
+        <a class="btn" href="https://blog.naver.com/du-da/224184446512" target="_blank" rel="noopener noreferrer">
+          설명회 영상 신청하기 →
+        </a>
+      </section>
+
+      <footer>
+        ⓒ 대치두다국어학원 | 경기고 예비고1 국어 내신 안내문
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
