@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대치두다국어학원 | 한승T 소개 페이지</title>
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --bg-soft: #f6f1e8;
+      --surface: #ffffff;
+      --surface-2: #fcfaf6;
+      --surface-soft: #f8f3eb;
+      --text: #1d2433;
+      --muted: #6f6a61;
+      --line: rgba(191, 155, 94, 0.24);
+      --gold: #bf9b5e;
+      --gold-strong: #a88243;
+      --gold-soft: rgba(191, 155, 94, 0.10);
+      --navy: #1d2f5f;
+      --navy-deep: #132247;
+      --navy-soft: #eef2fb;
+      --shadow: 0 18px 40px rgba(22, 31, 55, 0.08);
+      --shadow-strong: 0 24px 56px rgba(29, 47, 95, 0.14);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(191,155,94,0.08), transparent 22%),
+        linear-gradient(180deg, #fcfbf8 0%, #f8f4ee 100%);
+      line-height: 1.82;
+      word-break: keep-all;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    strong { font-weight: 800; color: var(--navy-deep); }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(251, 250, 247, 0.9);
+      border-bottom: 1px solid rgba(191,155,94,0.14);
+    }
+
+    .topbar-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav a:hover { color: var(--navy); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 108px 0 94px;
+      background:
+        radial-gradient(circle at 84% 18%, rgba(191,155,94,0.14), transparent 18%),
+        radial-gradient(circle at 10% 10%, rgba(29,47,95,0.05), transparent 20%),
+        linear-gradient(135deg, #ffffff 0%, #f8f3eb 58%, #f4eee4 100%);
+      border-bottom: 1px solid rgba(191,155,94,0.14);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -150px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(29,47,95,0.035);
+      filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(191,155,94,0.08);
+      border: 1px solid rgba(191,155,94,0.24);
+      color: var(--gold-strong);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.06;
+      letter-spacing: -0.06em;
+      color: var(--navy-deep);
+    }
+
+    .hero .lead {
+      margin: 24px 0 0;
+      max-width: 760px;
+      color: #4a5568;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #1d2f5f 0%, #274281 100%);
+      box-shadow: 0 14px 28px rgba(29,47,95,0.16);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(29,47,95,0.12);
+      color: var(--navy);
+    }
+
+    .hero-card {
+      position: relative;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(191,155,94,0.22);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 12px -12px -12px 12px;
+      border: 1px solid rgba(191,155,94,0.16);
+      border-radius: 28px;
+      z-index: -1;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 16px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-card li {
+      position: relative;
+      padding-left: 18px;
+      color: #39465c;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .hero-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold-strong);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .hero-meta .meta {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(191,155,94,0.18);
+      box-shadow: var(--shadow);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    section {
+      padding: 90px 0;
+      border-bottom: 1px solid rgba(191,155,94,0.14);
+    }
+
+    .section-intro {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--gold-strong);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(32px, 4.5vw, 52px);
+      line-height: 1.16;
+      letter-spacing: -0.055em;
+      color: var(--navy-deep);
+    }
+
+    .section-desc {
+      margin: 0;
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 860px;
+    }
+
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .quote-block {
+      position: relative;
+      overflow: hidden;
+      padding: 44px 40px 38px;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(191,155,94,0.11) 0%, rgba(255,255,255,0.94) 100%);
+      border: 1px solid rgba(191,155,94,0.26);
+      box-shadow: var(--shadow);
+    }
+
+    .quote-block::before {
+      content: "“";
+      position: absolute;
+      top: 0;
+      left: 18px;
+      font-size: 110px;
+      line-height: 1;
+      color: rgba(191,155,94,0.18);
+      font-weight: 800;
+    }
+
+    .quote {
+      margin: 0;
+      font-size: clamp(24px, 3.5vw, 40px);
+      line-height: 1.46;
+      letter-spacing: -0.045em;
+      color: var(--navy-deep);
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      position: relative;
+      padding: 30px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #ffffff 0%, #fcfaf6 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: 56px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+    }
+
+    .card.soft {
+      background: linear-gradient(180deg, #fbf7f0 0%, #f7f1e8 100%);
+    }
+
+    .card.navy {
+      background: linear-gradient(135deg, #1d2f5f 0%, #233d78 100%);
+      color: #fff;
+      border: 1px solid rgba(29,47,95,0.08);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .card.navy::before {
+      background: linear-gradient(90deg, #f0d29f 0%, transparent 100%);
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      line-height: 1.28;
+      letter-spacing: -0.035em;
+      color: var(--navy);
+    }
+
+    .card.navy h3,
+    .card.navy h4,
+    .card.navy p,
+    .card.navy li,
+    .card.navy strong {
+      color: #fff;
+    }
+
+    .card h4 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0;
+      color: #4c586b;
+      font-size: 16.5px;
+      line-height: 1.9;
+    }
+
+    .mini {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--gold-strong);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .card.navy .mini {
+      color: #f3d9aa;
+    }
+
+    .stat {
+      padding: 28px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #faf7f1 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+    }
+
+    .stat strong {
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      display: block;
+    }
+
+    .highlight-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .highlight-list li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid rgba(191,155,94,0.16);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .season {
+      position: relative;
+      padding: 30px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #ffffff 0%, #fcfaf6 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 16px;
+    }
+
+    .season-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      width: fit-content;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(191,155,94,0.12);
+      color: var(--gold-strong);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .season h3 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+    }
+
+    .season p {
+      margin: 0;
+      color: #4c586b;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .season-copy {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--navy-soft);
+      border: 1px solid rgba(29,47,95,0.08);
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .season.featured {
+      transform: translateY(-12px);
+      border: 1.5px solid rgba(29,47,95,0.14);
+      box-shadow: var(--shadow-strong);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f9f7f1 100%);
+    }
+
+    .season.featured::before {
+      content: "NOW";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1d2f5f 0%, #274281 100%);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .season.featured .season-copy {
+      background: linear-gradient(135deg, #1d2f5f 0%, #274281 100%);
+      color: #fff;
+      border: none;
+    }
+
+    .review-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review-card::after {
+      content: "”";
+      position: absolute;
+      right: 26px;
+      bottom: -24px;
+      font-size: 120px;
+      line-height: 1;
+      color: rgba(29,47,95,0.08);
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    .review-card p {
+      color: #39465b;
+      font-size: 16.5px;
+      line-height: 1.96;
+    }
+
+    .review-title {
+      font-size: clamp(26px, 3vw, 34px) !important;
+      line-height: 1.3 !important;
+    }
+
+    .cta {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(191,155,94,0.14), transparent 18%),
+        linear-gradient(135deg, #fffdf9 0%, #f6efe5 100%);
+      border-bottom: none;
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      align-items: center;
+      padding: 36px;
+      border-radius: 32px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(191,155,94,0.24);
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.18;
+      letter-spacing: -0.05em;
+      color: var(--navy-deep);
+    }
+
+    .cta p {
+      margin: 0;
+      color: #4c586b;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .cta-panel {
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #eef2fb 0%, #f8f9fd 100%);
+      border: 1px solid rgba(29,47,95,0.08);
+    }
+
+    .cta-panel strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: 21px;
+      letter-spacing: -0.03em;
+    }
+
+    .cta-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #3f4c63;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      padding: 30px 0 60px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .cta-box,
+      .grid-3,
+      .grid-2,
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .season.featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .nav { display: none; }
+      .hero { padding: 82px 0 68px; }
+      section { padding: 70px 0; }
+      .card, .hero-card, .season, .quote-block, .cta-box { padding: 24px; }
+      .hero h1 { font-size: clamp(38px, 10vw, 54px); }
+      .section-title { font-size: clamp(30px, 8vw, 40px); }
+      .quote { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">대치두다국어학원 · 한승T</div>
+      <nav class="nav">
+        <a href="#philosophy">철학</a>
+        <a href="#profile">이력</a>
+        <a href="#system">관리</a>
+        <a href="#curriculum">문학·독서</a>
+        <a href="#season">시즌 로드맵</a>
+        <a href="#review">후기</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">DAECHI DUDA · 고3 시즌2 모집</div>
+        <h1>
+          완벽한 승을 향해,<br />
+          지금은 시즌 2입니다.
+        </h1>
+        <p class="lead">
+          <strong>학생에게 가장 필요한 도움</strong>을 끝까지 고민하는 강의,
+          수업 이후까지 이어지는 관리,
+          그리고 실전에서 흔들리지 않도록 만드는 <strong>판단 기준</strong>.
+          한승T는 수능 당일까지 그 과정을 함께합니다.
+        </p>
+        <div class="hero-cta">
+          <a href="#season" class="btn btn-primary">시즌 2 보기</a>
+          <a href="#system" class="btn btn-secondary">관리 시스템 보기</a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="meta">문학</div>
+          <div class="meta">독서</div>
+          <div class="meta">클리닉</div>
+          <div class="meta">시즌2 모집</div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>한승T 수업의 핵심</h3>
+        <ul>
+          <li><strong>학생의 위치에서 가장 필요한 도움</strong>에 집중하는 강의</li>
+          <li><strong>오직 한 반만 운영</strong>하는 밀착 관리 시스템</li>
+          <li><strong>문학 · 독서</strong>를 실전 판단 기준으로 구조화한 수업</li>
+          <li><strong>클리닉 · 과제 · 질문 · 피드백</strong>이 연결되는 운영</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="philosophy">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="section-kicker">Teacher Philosophy</div>
+        <h2 class="section-title">학생의 위치에서 가장 필요한 도움을,<br />끝까지 함께하는 강의</h2>
+      </div>
+
+      <div class="quote-block">
+        <p class="quote">
+          “강사로서 선택받아야 한다는 강박보다는,
+          선택해 준 학생들에게 최고의 효용을 제공하겠다는 생각 하나가
+          지금의 한승T를 움직이는 유일한 동력입니다.”
+        </p>
+      </div>
+
+      <div style="height:24px"></div>
+
+      <div class="card review-card">
+        <h3>한승T</h3>
+        <p>한승T는 가벼운 인사보다는 올 한 해를 성공적으로 마무리할 수 있도록 학생의 위치에서 가장 필요한 도움을 주는 것, 그리고 그 과정이 끝날 때까지 지치지 않고 곁을 지키는 것이 강사로서의 진정한 도리라고 믿습니다. 이러한 공감 능력은 단순히 지식을 전달하는 것을 넘어, 수험생의 고단한 여정을 끝까지 함께 완주하게 하는 강력한 원동력이 됩니다.</p>
+        <div style="height:16px"></div>
+        <p>과거에는 강사로서 잘 해내야겠다는 마음, 즉 강의 평가나 학생들의 선택 등 강사 개인의 성과에 대한 부담이 컸던 시기도 있었습니다. 하지만 작년 수능 이후 한승T의 생각은 완전히 바뀌었습니다. 좋은 강의 평가나 많은 수강생 수에 대한 부담을 완전히 내려놓았습니다. 대신 2027학년도 수능을 준비하는 학생들에게 실질적으로 무엇이 가장 큰 도움이 될 것인가라는 본질적인 질문 하나에만 집중하기로 했습니다. 강사로서 선택받아야 한다는 강박보다는, 선택해 준 학생들에게 최고의 효용을 제공하겠다는 생각 하나가 지금의 한승T를 움직이는 유일한 동력입니다.</p>
+        <div style="height:16px"></div>
+        <p>강사로서 잘하겠다는 각오와 학생에게 도움이 되겠다는 마음이 서로 다르지 않음을 압니다. 그러나 한승T는 이제 그 초점을 오로지 학생의 성장과 결과에 맞추고 있습니다. 수험생들이 가장 힘겨워하는 11월 수능 당일까지 변함없는 태도로 최선을 다할 것을 약속드립니다. 강사가 성과에 매몰되지 않고 오직 학생을 돕겠다는 순수한 목적으로 움직일 때, 가장 강력한 교육적 시너지가 발생한다고 확신합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="section-kicker">Profile</div>
+        <h2 class="section-title">검증된 환경에서 쌓아온 경험</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="stat"><strong>강남대성학원</strong></div>
+        <div class="stat"><strong>강남대성 SII(대치)</strong></div>
+        <div class="stat"><strong>강남대성기숙 의대관</strong></div>
+      </div>
+
+      <div style="height:20px"></div>
+
+      <div class="grid-2">
+        <div class="stat"><strong>대성마이맥 2027학년도 더프리미엄 모의고사 문학 해설</strong></div>
+        <div class="stat"><strong>대치두다국어학원</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="system">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="section-kicker">Management System</div>
+        <h2 class="section-title">한 반만 운영하는 이유는,<br />완벽한 관리 때문입니다.</h2>
+        <p class="section-desc">
+          수업만으로 끝나지 않는 관리가 성과를 만듭니다.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>클리닉 및 밀착 관리 시스템</h3>
+          <p>한승T가 오로지 한 반만 수업을 개설한 이유는 클리닉을 통한 완벽한 관리 때문입니다. 클리닉 시간에 맞춰 수업 교재와 주간지를 지참하여 등원하면 매주 클리닉 취지에 맞는 개인 보충이 이루어집니다. 클리닉 시간에는 수업 복습 확인, 실전 풀이 과정의 취약점 진단 및 개선, 선택 과목 학습 계획 점검 등 실질적으로 필요한 수업에서 채우기 힘든 점들을 보완합니다. 이는 짧은 과외와 같은 고밀도 관리이며, 모든 수행을 마친 후 마지막에는 한승T와 직접 전부 점검하고 귀가하게 됩니다. 수업 교재와 주간지 미지참 시 클리닉 진행이 불가하며, 이 경우 일정을 변경하여 재지정해야 할 정도로 엄격하게 운영됩니다.</p>
+        </div>
+
+        <div class="card soft">
+          <h3>관리 핵심</h3>
+          <ul class="highlight-list">
+            <li><strong>수업 복습 확인</strong></li>
+            <li><strong>실전 풀이 과정의 취약점 진단 및 개선</strong></li>
+            <li><strong>선택 과목 학습 계획 점검</strong></li>
+            <li><strong>한승T 직접 최종 점검 후 귀가</strong></li>
+            <li><strong>수업 교재와 주간지 미지참 시 클리닉 진행 불가</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="height:24px"></div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>과제 및 피드백 시스템</h3>
+          <p>과제는 주 2회 철저하게 확인합니다. 클리닉 방문 시 수행 내용을 함께 점검하고, 다음 주차 수업 시 주간지를 제출받습니다. 과제 검사 결과는 데이터로 기록되어 카카오톡으로 학부모님과 학생에게 발송되며, 본인이 수행한 과제에 대한 구체적인 피드백도 당일 즉시 제공됩니다. 단순한 검사를 넘어 매주 성취를 쌓아나가는 과정에 대한 응원과 관심으로 운영됩니다.</p>
+        </div>
+
+        <div class="card navy">
+          <div class="mini">Question Channel</div>
+          <h3>질문 채널 안내</h3>
+          <p>현장 질문 외에 네이버 카페의 비공개 게시판을 통해 질문을 주고받을 수 있습니다. 본인의 질문 내용만 노출되므로 질문 답변 내용을 누적하여 관리하기에 용이합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curriculum">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="section-kicker">Curriculum</div>
+        <h2 class="section-title">감상하기, 접근하기, 판단하기를<br />완성해 나가는 수업</h2>
+      </div>
+
+      <div class="card review-card">
+        <h3>시즌별 로드맵 : 완벽한 승으로 가는 길</h3>
+        <p>한승T의 1년 커리큘럼은 목표 의식을 지니고 감상하기, 선지 접근하기, 선지 판단하기의 흐름을 시즌마다 경중을 달리하여 완성해 나가는 과정입니다. 초반에는 잘 접근해서 풀자는 목표에 집중하고, 후반에는 시간 내에 완벽히 풀자는 목표를 향해 나아갑니다. 전공 지식 수준의 해설보다는 평범한 경험과 능력치로도 충분히 해낼 수 있음을 실전적으로 연습합니다.</p>
+      </div>
+
+      <div style="height:24px"></div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="mini">Literature</div>
+          <h3>문학 : 오류 없는 명료한 기준 잡기</h3>
+          <p>문학 커리큘럼은 작품 자체에 대한 사후적 해석이나 배경지식 위주의 해설에 의존하지 않고, 현장에서 문제를 해결할 수 있는 완벽한 판단 로직을 구축하는 데 목적이 있습니다. 특히나 제가 가르치는 내용들은 강남대성 재수종합반의 최상위권 학생들, 더프리미엄 해설 강의를 듣는 학생들이 학습하기 때문에 철저히 검증하고 오류 없는 지점들이라 자부합니다.</p>
+          <div style="height:16px"></div>
+          <p>첫째, 각 갈래별로 누구나 가능한 감상 기준에서 선지와 보기 접근을 시작합니다. 사후적인 해석을 배제하고 실전적인 문제 풀이 방식을 터득하여 정답의 근거를 확신할 수 있게 합니다.</p>
+          <div style="height:12px"></div>
+          <p>둘째, 문학 개념과 문학 개념어 등 반드시 알아야 할 지식을 함께 학습합니다. 모든 지식은 평가원 기출에 기반하여 설명하며, 흔들리지 않는 흠 없는 기준을 만드는 것을 최우선으로 합니다.</p>
+          <div style="height:12px"></div>
+          <p>셋째, 지식을 습득한 이후에는 작품에서 사후적으로 바라볼 몇 가지 지점들을 추가로 학습하여 사고의 외연을 조금씩 확장시켜 나갑니다. 이를 통해 생소한 작품이 출제되더라도 당황하지 않고 대응할 수 있는 힘을 기릅니다.</p>
+        </div>
+
+        <div class="card soft">
+          <div class="mini">Reading</div>
+          <h3>독서 : 문장의 경중 조절과 최적화 작업</h3>
+          <p>독서는 단순히 읽는 것을 넘어 지문의 흐름을 선지까지 단절 없이 끌고 가는 최적화 훈련에 집중합니다.</p>
+          <div style="height:16px"></div>
+          <p>첫째, 초반에는 인문 지문 위주로 글의 중심 맥락을 잡으며 독해하는 습관을 형성합니다. 모든 문장에 동일한 무게를 두지 않고, 중심 맥락에 근거하여 이해가 필요한 문장과 기억이 필요한 정보를 구분하며 문장의 경중을 달리 읽는 연습을 합니다.</p>
+          <div style="height:12px"></div>
+          <p>둘째, 평가원이 자주 출제하는 오답 요소들을 분석하여, 지문에서 파악한 흐름이 실제 정답 선택으로 직결되도록 훈련합니다.</p>
+          <div style="height:12px"></div>
+          <p>셋째, 지문 독해 이후 사후적으로 점검해야 할 지점들을 추가 학습하여 독해의 사고 폭을 확장합니다.</p>
+          <div style="height:12px"></div>
+          <p>추가적으로 EBS 수능특강 출간 시 단순 분석서보다는 먼저 풀어보아야 할 지문의 우선순위를 정해 계획표를 짜드립니다. 또한 EBS 연계 월간지 이매진을 통해 독서 지문 연계 학습을 매주 과제로 진행하며 관리합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="season">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="section-kicker">Season Roadmap</div>
+        <h2 class="section-title">초승에서 시작해,<br />완벽한 승으로 가는 길</h2>
+        <p class="section-desc">
+          현재는 <strong>시즌 2</strong> 시작 단계입니다.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="season">
+          <div class="season-label">Season 1</div>
+          <h3>초승</h3>
+          <div class="season-copy">처음 한승T를 만나는 시기이자, 수능 날의 완벽한 승을 거두기 위한 첫 번째 승입니다.</div>
+          <p>문학은, 단순히 작품을 많이 보는 수업이 아니며, 평가원 기출을 통해 감상의 목적과 선지 해결 전략을 하나로 연결하는 시기입니다. 이 시기에는 가장 빠른 시일 내에 새로E 분석서를 제공하고, 학생별 공부 우선순위와 계획표를 직접 수립해 드립니다. EBS 작품의 중요성을 잘 알고 있기 때문에 기출 분석과 좋은 결과를 만들 수 있는 과정으로 이어집니다.</p>
+          <p>독서는, 수업에서는 맥락을 정확하게 잡고 지문을 뚫어가는 연습을, 과제에서는 양적으로나 지식적으로나 기초 체력이 단단해지는 훈련을, 클리닉에서는 제한된 시간 내에 방향을 잃지 않는 자각을 하게 됩니다. 1년 동안 독해하는 틀을 잡아주기 위해 가장 집중해야 할 지문들로 독해 시각을 바꾸는 과정이 주된 목표입니다.</p>
+        </div>
+
+        <div class="season featured">
+          <div class="season-label">Season 2</div>
+          <h3>외연의 확장</h3>
+          <div class="season-copy">실전에서 느낄 압박감을 여유로 바꾸는 시기입니다.</div>
+          <p>문학은, 시즌 1에서 익힌 정석을 자유자재로 활용할 수 있도록 사고의 폭을 넓힙니다. 작품의 본질과 보기의 설계 원리를 더 깊게 파고들어 더 넓게 보고 정확하게 판단하는 힘을 기르게 됩니다.</p>
+          <p>독서는, 문장⦁다루는 내용 자체가 어려운 지문들을 통해 독해력을 한 단계 올리는 과정입니다. 9월 모의평가 전까지 꽤나 까다로운 지문들을 뚫어나갈 예정이며, 이 시기에 독해가 거의 완성됩니다.</p>
+        </div>
+
+        <div class="season">
+          <div class="season-label">Season 3</div>
+          <h3>완벽한 승</h3>
+          <div class="season-copy">수능 45문항을 완벽히 장악하기 위해 수능다운 호흡으로 훈련합니다.</div>
+          <p>강대 모의고사 K 혹은 이감 모의고사를 통해 파이널 시즌 동안 시즌 1, 2에서의 모든 수업, 과제, 클리닉 과정을 체화합니다. 이전까지의 공부들을 모두 통합하는 과정이고, 모의고사를 보고 해설하는 수업 외에도 필요한 기출 및 EBS를 다시 되짚어 보는 수업들로 구성됩니다.</p>
+          <p>아울러 과제로 제공되는 완벽한 승 모의고사는 작년 수능과 올해 모의평가, EBS 연계를 모두 반영하여 실전과 가장 유사한 밀도로 구성됩니다. 시간을 재고 몰입하여 푼 뒤, 차주 회차에서는 문제 속에 숨겨진 기출의 원리를 완벽히 내면화합니다. 출제 과정에 근거한 해설과 기출 분석을 통해 문학 만점을 위한 확실한 루틴을 완성합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="review">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="section-kicker">Review</div>
+        <h2 class="section-title">수강생 후기</h2>
+      </div>
+
+      <div class="card review-card">
+        <h3 class="review-title">국어를 감으로 버티는 과목에서,<br />기준으로 읽고 판단하는 과목으로</h3>
+        <p>저는 국어만 생각하면 한숨부터 나오는 학생이었습니다. 문학은 ‘감‘으로 찍는 과목 같았고, 독서는 끝까지 읽고 나면 머리에 남는 게 없어서 선지에서 늘 무너졌습니다. 시험을 보고 나면 항상 ’왜 틀렸는지‘보다 ’또 틀렸네‘가 먼저 떠올랐고, 그래서 국어 자체가 싫었던 것 같습니다.</p>
+        <div style="height:16px"></div>
+        <p>한승쌤 수업을 들으면서 제일 크게 달라진 건, 국어를 감으로 버티는 과목이 그렇지 않은 과목으로 변했다는 점입니다. 특히 문학에서 그 변화가 확실했습니다. 예전엔 작품을 ‘알아야’ 푸는 줄 알았는데, 수업에서 작품을 처음 보는 상황에서도 작품을 이해하고 선지랑 &lt;보기&gt;를 어떻게 접근해야 하는지부터 훈련해나가며 문학이 더 이상 단순 느낌으로 푸는 과목이 아니게 되었습니다. 신기하게 그때부터 문학이 덜 싫어졌습니다.</p>
+        <div style="height:16px"></div>
+        <p>독서도 처음엔 읽는 속도만 늘리려고 했었습니다. 하지만 속도보다 더 중요한 글의 맥락을 잡는 방식을 연습해나가며 지문을 읽고 머릿속에 ‘아 이 글은 결국 이런 이야기구나‘가 남기 시작했고, 선지에서 흔들리는 시간이 확 줄었습니다. 전에는 선지 하나마다 지문으로 다시 돌아가느라 시간도 멘탈도 다 털렸는데, 어느 순간부터는 흐름이 이어진 채로 문제를 풀게 됐습니다.</p>
+        <div style="height:16px"></div>
+        <p>그리고 저는 수업에서 제일 도움 많이 받은 게 클리닉이었습니다. 수업만 듣고 끝나는 게 아니라, 내가 뭘 잘못하고 있는지 계속 확인하고, 다음엔 뭘 해야 하는지가 스스로 정리되니까 공부가 흐트러질 틈이 적었습니다. 짧은 과외처럼 꾸준하게 관리받는 느낌이라, 혼자였으면 절대 못 고쳤을 습관들을 많이 고쳤습니다.</p>
+        <div style="height:16px"></div>
+        <p>처음에는 국어를 제일 싫어하고 성적도 바닥이었던 제가, 끝날 때는 국어를 ‘무섭지 않은 과목’으로 만들 수 있었던 이유는 결국 기준으로 읽고 판단하는 방법을 배웠기 때문이라고 생각합니다. 국어를 감으로 버티는 학생, 해설에 기대는 학생이라면 이 수업을 통해 ‘내가 왜 맞고 왜 틀렸는지 설명할 수 있는 국어’를 만들 수 있을 거라고 생각합니다.</p>
+        <div style="height:16px"></div>
+        <p><strong>고려대학교 바이오의공학부 오주원</strong> (고2 정시반~고3 정규반 2년 수강)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div class="cta-box">
+        <div>
+          <h2>지금은 시즌 2,<br />실전의 압박을 여유로 바꿀 시기입니다.</h2>
+          <p>
+            수능 당일까지 흔들리지 않도록,
+            읽는 기준과 판단의 기준을 세우는 수업.
+            대치두다국어학원 한승T와 함께 <strong>완벽한 승</strong>을 준비해보세요.
+          </p>
+          <div class="hero-cta" style="margin-top:22px;">
+            <a href="tel:01038456863" class="btn btn-primary">학원에 문의하기 010-3845-6863</a>
+            <a href="https://pf.kakao.com/_ZxoIEn" target="_blank" class="btn btn-secondary">카카오 채팅 바로가기</a>
+          </div>
+        </div>
+
+        <div class="cta-panel">
+          <strong>대치두다국어학원 한승T</strong>
+          <ul>
+            <li>학생의 위치에서 가장 필요한 도움</li>
+            <li>클리닉을 통한 완벽한 관리</li>
+            <li>문학 · 독서 실전 판단 기준 정립</li>
+            <li>고3 시즌2 신규 모집 중</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      대치두다국어학원 · 한승T 소개 페이지<br />
+      문의 : 010-3845-6863 · 카카오 채팅 바로가기
+    </div>
+  </footer>
+</body>
+</html>
